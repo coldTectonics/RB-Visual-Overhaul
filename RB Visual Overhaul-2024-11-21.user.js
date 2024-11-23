@@ -24,12 +24,32 @@
     document.getElementById('datebar').appendChild(clock);
 
     // логика рангов в разработке, будет тут
+    // в постах
+    var profiles = document.querySelectorAll('td.profile');
+    profiles.forEach((profile) => {
+        var postDetails = profile.querySelectorAll('span.postdetails')
+        postDetails.forEach((detail) => {
+            var userData = detail.querySelectorAll('b');
+            if (userData[0].innerText != "Предупреждения:") {
+                var numberOfPosts1 = parseInt(userData[1].nextSibling.data)
+                //console.log(numberOfPosts1)
+            }
+        })
+    });
 
-    // реплейс существующих иконок рангов
+    // на странице пользователей
+    var row = document.querySelectorAll('tr.row1, tr.row2');
+    if (row.length == 50) {
+        row.forEach((td) => {
+            var userDataInUsers = td.querySelectorAll('td.gen');
+            var numberOfPosts2 = parseInt(userDataInUsers[1].innerText);
+            var rank = userDataInUsers[2].innerHTML;
+        });
+    }
+
+    // реплейс существующих иконок рангов (временное решение)
     function updateImagesSrc() {
 		document.querySelectorAll('img[src*="./images/ranks/"]').forEach((previewImage) => {
-			//console.info('rb - swap img.src; image:', previewImage);
-            //console.log(typeof previewImage.src)
 			previewImage.src = previewImage.src.toLowerCase().replace('https://www.rusbionicle.com/forumsbio/images/ranks/', 'https://brickshelf.com/gallery/Roodaka8761/Bionicle/RB-new-ranks/');
 		})
 
