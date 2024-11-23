@@ -24,35 +24,48 @@
     document.getElementById('datebar').appendChild(clock);
 
     // логика рангов в разработке, будет тут
-    // в постах
-    var profiles = document.querySelectorAll('td.profile');
+    // чтение количества сообщений в постах...
+    var profiles = document.querySelectorAll('td.profile'); // сведения о пользователе в постах
     profiles.forEach((profile) => {
-        var postDetails = profile.querySelectorAll('span.postdetails')
+        var postDetails = profile.querySelectorAll('span.postdetails') // тут число сообщений
+        var tdPostDetails = profile.querySelectorAll('td.postdetails') // тут название ранга
+        console.log(tdPostDetails)
         postDetails.forEach((detail) => {
             var userData = detail.querySelectorAll('b');
             if (userData[0].innerText != "Предупреждения:") {
-                var numberOfPosts1 = parseInt(userData[1].nextSibling.data)
-                //console.log(numberOfPosts1)
+                var numberOfPosts1 = parseInt(userData[1].nextSibling.data) // число постов в темах
             }
+        })
+        tdPostDetails.forEach((tdDetail) => {
+            var topicRank = tdDetail.innerText // ранг в темах
+            // console.log(rank)
         })
     });
 
-    // на странице пользователей
-    var row = document.querySelectorAll('tr.row1, tr.row2');
-    if (row.length == 50) {
+    // ...и на странице пользователей
+    var row = document.querySelectorAll('tr.row1, tr.row2'); // сведения о пользователе в списке пользователей
+    if (row.length == 50) { // потому что на странице 50 пользователей (чтобы не мешало остальному форуму)
         row.forEach((td) => {
             var userDataInUsers = td.querySelectorAll('td.gen');
-            var numberOfPosts2 = parseInt(userDataInUsers[1].innerText);
-            var rank = userDataInUsers[2].innerHTML;
+            var numberOfPosts2 = parseInt(userDataInUsers[1].innerText); // число постов в списке пользователей
+            var usersRank = userDataInUsers[2].innerHTML; // ранг в списке пользователей
         });
     }
+    // ещё и страница профиля...
+    var userProfileRank = document.querySelector('td.postdetails').innerText // ранг в профиле
+    var bGen = document.querySelectorAll('b.gen')
+    bGen.forEach((tag) => {
+        if (!isNaN(parseInt(tag.innerText))) {
+            var numberOfPosts3 = parseInt(tag.innerText) // число постов в профиле
+            //console.log(userProfile)
+        }
+    })
 
     // реплейс существующих иконок рангов (временное решение)
     function updateImagesSrc() {
 		document.querySelectorAll('img[src*="./images/ranks/"]').forEach((previewImage) => {
 			previewImage.src = previewImage.src.toLowerCase().replace('https://www.rusbionicle.com/forumsbio/images/ranks/', 'https://brickshelf.com/gallery/Roodaka8761/Bionicle/RB-new-ranks/');
 		})
-
 	}
 
 	if(document.readyState == 'complete') {
