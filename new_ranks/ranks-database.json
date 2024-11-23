@@ -1,4 +1,5 @@
-{
+[
+    {
         "postNumber": 0,
         "rankName": "Поселенец",
         "rankIcon": "https://brickshelf.com/gallery/Roodaka8761/Bionicle/RB-new-ranks/voyacomplete0.png"
@@ -493,3 +494,4 @@
         "rankName": "Овладевший Стихией Льда",
         "rankIcon": "https://brickshelf.com/gallery/Roodaka8761/Bionicle/RB-new-ranks/completewhitemasks06.png"
     }
+]
