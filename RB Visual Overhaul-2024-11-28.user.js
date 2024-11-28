@@ -212,7 +212,7 @@ function replaceHtmlString(oldString, newString) {
 
     var current_link = window.location.href;
     //пустой столбец
-    if (current_link.includes ('search.php?search_id')) {
+    if (current_link.includes ('search.php?search_id') || (current_link.includes ('search.php?st='))) {
         replaceHtmlString('<td class="row1" width="25" align="center">\n						</td>', '');
         replaceHtmlString('</a></p>\n							</td>'.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), '</a></p><br>\n							</td><td class="row1" width="25" align="center"></td>');
     }
