@@ -187,6 +187,9 @@ function replaceHtmlString(oldString, newString) {
     replaceHtmlString('<img src="./styles/subsilver2/imageset/forum_read_subforum.gif" alt="Нет новых сообщений" title="Нет новых сообщений" width="46" height="25">'.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), '<span class="dot" style="margin: 0 20px; border: 3px solid #dbdee1; background-color:#313338; width:20px; height:20px;"></span> ');
     replaceHtmlString('<img src="./styles/subsilver2/imageset/forum_read_locked.gif" alt="Нет новых сообщений [ Тема закрыта ]" title="Нет новых сообщений [ Тема закрыта ]" width="46" height="25">'.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), '<span class="dot" style="margin: 0 20px; border: 3px solid #dbdee1; background-color:#313338; width:20px; height:20px;"></span> ');
 
+    //чёрные ссылки
+    replaceHtmlString('style="color: #000000"', 'style="color: #dbdee1"');
+
     var current_link = window.location.href;
     //пустой столбец
     if (current_link.includes ('search.php?search_id')) {
@@ -210,6 +213,8 @@ function replaceHtmlString(oldString, newString) {
     //список иконок который меня выбесил и я его целиком нюкнул
     replaceHtmlString('<tbody><tr>\n				<td style="text-align: center;" width="20"><span class="dot" style="background-color: orange;"></span></td>\n				<td class="gensmall">Новые сообщения</td>\n				<td>&nbsp;&nbsp;</td>\n				<td style="text-align: center;" width="20"><span class="dot"></span></td>\n				<td class="gensmall">Нет новых сообщений</td>\n				<td>&nbsp;&nbsp;</td>\n				<td style="text-align: center;" width="20"><img src="./styles/subsilver2/imageset/announce_read.gif" alt="Объявление" title="Объявление" width="19" height="18"></td>\n				<td class="gensmall">Объявление</td>\n			</tr>\n			<tr>\n				<td style="text-align: center;"><img src="./styles/subsilver2/imageset/topic_unread_hot.gif" alt="Новые сообщения [ Популярная тема ]" title="Новые сообщения [ Популярная тема ]" width="19" height="18"></td>\n				<td class="gensmall">Новые сообщения [ Популярная тема ]</td>\n				<td>&nbsp;&nbsp;</td>\n				<td style="text-align: center;"><img src="./styles/subsilver2/imageset/topic_read_hot.gif" alt="Нет новых сообщений [ Популярная тема ]" title="Нет новых сообщений [ Популярная тема ]" width="19" height="18"></td>\n				<td class="gensmall">Нет новых сообщений [ Популярная тема ]</td>\n				<td>&nbsp;&nbsp;</td>\n				<td style="text-align: center;"><img src="./styles/subsilver2/imageset/sticky_read.gif" alt="Прилепленная" title="Прилепленная" width="19" height="18"></td>\n				<td class="gensmall">Прилепленная</td>			\n			</tr>\n			<tr>\n				<td style="text-align: center;"><img src="./styles/subsilver2/imageset/topic_unread_locked.gif" alt="Новые сообщения [ Тема закрыта ]" title="Новые сообщения [ Тема закрыта ]" width="19" height="18"></td>\n				<td class="gensmall">Новые сообщения [ Тема закрыта ]</td>\n				<td>&nbsp;&nbsp;</td>\n				<td style="text-align: center;"><img src="./styles/subsilver2/imageset/topic_read_locked.gif" alt="Нет новых сообщений [ Тема закрыта ]" title="Нет новых сообщений [ Тема закрыта ]" width="19" height="18"></td>\n				<td class="gensmall">Нет новых сообщений [ Тема закрыта ]</td>\n				<td>&nbsp;&nbsp;</td>\n				<td style="text-align: center;"><img src="./styles/subsilver2/imageset/topic_moved.gif" alt="Перенесённая" title="Перенесённая" width="19" height="18"></td>\n				<td class="gensmall">Перенесённая</td>\n			</tr>\n			</tbody>'.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), '');
 
+    //hide
+    replaceHtmlString('<span style="font-size: 85%; line-height: normal">', '<span style="color: #dbdee1; font-size: 85%; line-height: normal">');
 
     const data = JSON.parse(GM_getResourceText("DATABASE"));
 
