@@ -29,7 +29,6 @@ function replaceHtmlString(oldString, newString) {
     document.body.innerHTML = updatedHtmlContent;
 }
 
-
 (async() => {
     'use strict';
     // часы
@@ -125,6 +124,7 @@ function replaceHtmlString(oldString, newString) {
 
     //кнопка ответить
     replaceHtmlString('<img src="./styles/subsilver2/imageset/ru/button_topic_reply.gif" alt="Ответить на тему" title="Ответить на тему">'.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'Ответить');
+    replaceHtmlString('<img src="./styles/subsilver2/imageset/ru/button_pm_reply.gif" alt="Ответить" title="Ответить">'.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'Ответить');
     replaceHtmlString('<a href="./posting.php?mode=reply'.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), '<a class="postbtn" href="./posting.php?mode=reply');
     //кнопка "новая тема"
     replaceHtmlString('<img src="./styles/subsilver2/imageset/ru/button_topic_new.gif" alt="Начать новую тему" title="Начать новую тему">'.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'Новая тема');
@@ -155,8 +155,30 @@ function replaceHtmlString(oldString, newString) {
     //жалоба
     replaceHtmlString('<img src="./styles/subsilver2/imageset/ru/icon_post_report.gif" alt="Пожаловаться на это сообщение" title="Пожаловаться на это сообщение">'.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), '!');
     replaceHtmlString('<a href="./report.php?f='.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), '<a class="postbtn" href="./report.php?f=');
+    //удаление сообщения
+    replaceHtmlString('<img src="./styles/subsilver2/imageset/ru/icon_post_delete.gif" alt="Удалить сообщение" title="Удалить сообщение">'.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'x');
+    replaceHtmlString('<a href="./posting.php?mode=delete'.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), '<a class="postbtn" href="./posting.php?mode=delete');
     //сайт в поиске
     replaceHtmlString('"><img src="./styles/subsilver2/imageset/ru/icon_contact_www.gif" alt="Сайт" title="Сайт">'.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), '" class="postbtn">www');
+
+    //MSNM
+    replaceHtmlString('<img src="./styles/subsilver2/imageset/ru/icon_contact_msnm.gif" alt="MSNM/WLM" title="MSNM/WLM">'.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'MSMN/WLM');
+    replaceHtmlString('<a href="./memberlist.php?mode=contact&amp;action=msnm'.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), '<a class="postbtn" href="./memberlist.php?mode=contact&amp;action=msnm');
+    //Skype
+    replaceHtmlString('<img src="./images/icon_contact_skype.png" alt="">'.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'Skype');
+    //YIM
+    replaceHtmlString('<img src="./styles/subsilver2/imageset/ru/icon_contact_yahoo.gif" alt="YIM" title="YIM">'.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'YIM');
+    replaceHtmlString('<a href="http://edit.yahoo.com/config/send_webmesg'.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), '<a class="postbtn" href="http://edit.yahoo.com/config/send_webmesg');
+    //AIM
+    replaceHtmlString('<img src="./styles/subsilver2/imageset/ru/icon_contact_aim.gif" alt="AIM" title="AIM">'.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'AIM');
+    replaceHtmlString('<a href="./memberlist.php?mode=contact&amp;action=aim'.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), '<a class="postbtn" href="./memberlist.php?mode=contact&amp;action=aim');
+    //ICQ
+    replaceHtmlString('<img src="./styles/subsilver2/imageset/ru/icon_contact_icq.gif" alt="ICQ" title="ICQ">'.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'ICQ');
+    replaceHtmlString('<a href="http://www.icq.com'.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), '<a class="postbtn" href="http://www.icq.com');
+    //Jabber
+    replaceHtmlString(('<img src="./styles/subsilver2/imageset/ru/icon_contact_jabber.gif" alt="'.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')+'[a-zA-Z@." =0-9]*'+'>'), '');
+
+
 
     //элита
     replaceHtmlString('0000CC', '0080FF');
@@ -166,8 +188,6 @@ function replaceHtmlString(oldString, newString) {
 
     //иконки сверху (ФИКСИТЬ)
     replaceHtmlString(('<img src="./styles/subsilver2/theme/images/'.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')+'[-a-zA-Z0-9@:%._\+~#=]*.gif"'+' alt="*" width="12" height="13">'.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')), '<span class="dot"></span> ');
-
-    //иконки мессенджеров
 
     //иконки постов в теме
     replaceHtmlString('<img src="./styles/subsilver2/imageset/icon_post_target_unread.gif" alt="Новое сообщение" title="Новое сообщение" width="12" height="9">'.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), '<span class="dot" style="background-color: orange;"></span> ');
