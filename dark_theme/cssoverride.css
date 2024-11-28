@@ -575,6 +575,23 @@ textarea {
 		border-radius: 2px;
 }
 
+.post:hover {
+	background-color: #383a40;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #232428;
+	color: #dbdee1;
+		border-radius: 2px;
+}
+.post:focus {
+	background-color: #383a40;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #232428;
+	color: #dbdee1;
+		border-radius: 2px;
+}
+
 .btnbbcode {
 	color: #000000;
 	font-weight: normal;
@@ -597,7 +614,8 @@ textarea {
 	cursor: pointer;
 	padding: 1px 5px;
 	font-size: 1.1em;
-		border-radius: 4px;
+    border-radius: 4px;
+	color: #232428;
 }
 
 .btnmain:hover {
@@ -623,6 +641,18 @@ textarea {
 }
 
 .btnfile {
+	font-weight: normal;
+	background-color: #383a40;
+	border-style: solid;
+	border-width: 2px;
+		border-color: #232428;
+	padding: 1px 5px;
+	font-size: 1.1em;
+	color: #dbdee1;
+			border-radius: 4px;
+}
+
+.btnfile:hover {
 	font-weight: normal;
 	background-color: #383a40;
 	border-style: solid;
@@ -959,7 +989,8 @@ a.postbtn {
 	cursor: pointer;
 	padding: 1px 5px;
 	font-size: 1.1em;
-		border-radius: 4px;
+    border-radius: 4px;
+	white-space:nowrap;
 }
 	
 a.postbtn:hover {
@@ -978,11 +1009,12 @@ a.postbtn:hover {
 }
 
 input {
-	border-radius:3px;
+	background-color: #383a40;
 	border-style: solid;
-	border-color: #383a40;
-background-color: #383a40;
+	border-width: 2px;
+	border-color: #232428;
 	color: #dbdee1;
+		border-radius: 2px;
 }
 
 input.btnlite {
